@@ -1,0 +1,74 @@
+body {
+  background-color: tan;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.main-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.fade-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  animation: fade 5s infinite;
+}
+
+@keyframes fade {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.tab {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  background: rgb(138, 0, 0);
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.tab:hover {
+  transform: scale(1.2);
+}
+
+.tab:nth-child(1) { top: 80px; left: 50%;}
+.tab:nth-child(2) { left: 80px; top: 50%;}
+.tab:nth-child(3) { right: 50%; top: 50%;}
+
+
+.tabs-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.blurb {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  backdrop-filter: blur(10px);
+  transition: opacity 0.3s;
+}
+
+
