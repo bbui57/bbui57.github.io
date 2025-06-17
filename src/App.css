@@ -1,5 +1,6 @@
 body {
   background-color: tan;
+  overflow: hidden;
 }
 
 .App {
@@ -8,18 +9,58 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 99.5vh;
+  overflow: hidden;
+}
+
+.App-header {
+  background-color: #b39879;
+  min-height: 100vh;
+  min-width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  position: absolute;
+}
+
+.title-container {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  z-index: 0;
+}
+
+.title {
+  font-family:'System UI', sans-serif;
+  position: absolute;
+  font-size: clamp(1rem, 4vw, 3rem);
+
+}
+
+.subtitle {
+  font-family:'System UI', sans-serif;
+  position: absolute;
+  top: 60px;
+  font-size: clamp(0.7em, 3vw, 2rem);
 }
 
 .main-circle {
-  width: 300px;
-  height: 300px;
+  width: min(30vw, 30vh);
+  height: min(30vw, 30vh);
   border-radius: 50%;
   overflow: hidden;
   position: absolute;
   align-items: center;
   justify-content: center;
   display: flex;
+  z-index: 0;
 }
 
 .fade-image {
@@ -27,23 +68,18 @@ body {
   height: 100%;
   object-fit: cover;
   position: absolute;
-  animation: fade 5s infinite;
-}
 
-@keyframes fade {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
 }
 
 .tab {
   position: absolute;
-  width: 100px;
+  width: 150px;
   height: 40px;
   background: rgb(138, 0, 0);
   color: white;
   text-align: center;
-  border-radius: 10px;
+  font-size: x-large;
+  border-radius: 60px;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -51,24 +87,63 @@ body {
   transform: scale(1.2);
 }
 
-.tab:nth-child(1) { top: 80px; left: 50%;}
-.tab:nth-child(2) { left: 80px; top: 50%;}
-.tab:nth-child(3) { right: 50%; top: 50%;}
+.tab:nth-child(1) {left: 1vw;}
+.tab:nth-child(2) {right: 1vw;}
 
 
 .tabs-container {
-  position: relative;
-  width: 500px;
-  height: 500px;
+  position: absolute;
+  width: 700px;
+  min-height: 5vh;
+
+  top: 40vh;
+}
+
+button {
+  position: absolute;
+  width: 150px;
+  height: 40px;
+  background: rgb(138, 0, 0);
+  color: white;
+  text-align: center;
+  font-size: x-large;
+  border-radius: 60px;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+}
+
+button:hover {
+  transform: scale(1.2);
 }
 
 .blurb {
   position: absolute;
-  background: rgba(255, 255, 255, 0.8);
   padding: 10px;
   border-radius: 5px;
   backdrop-filter: blur(10px);
   transition: opacity 0.3s;
+  width: 50vw;
+  text-align: left;
+
 }
 
+.carousel-container {
+  width: 20vw;
+  height: 15vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 20vh;
+  }
 
+.skill-icon {
+  width: min(10vw, 10vh);
+  height: auto;
+}
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
