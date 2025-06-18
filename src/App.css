@@ -106,10 +106,10 @@ body {
 }
 
 .tab:first-child {
-  margin-left: 10px;
+  margin-left: 40px;
 }
 .tab:last-child {
-  margin-right: 10px;
+  margin-right: 40px;
 }
 
 button {
@@ -149,7 +149,7 @@ button:hover {
 }
 
 .carousel-container {
-  width: 100vw;
+  width: 100%;
   height: 15vh;
   overflow: hidden;
   display: flex;
@@ -318,7 +318,6 @@ a.resume-link {
     font-size: 1.4em;
   }
   .carousel-container {
-    width: 100%;
     height: 20vh;
     bottom: 10vh;
   }
@@ -339,17 +338,16 @@ a.resume-link {
 
 @media (max-width: 1024px) and (min-width: 601px) {
   button {
-    width: 20vw;
+    width: min(20vw, 40vh);
     height: 6vh;
     font-size: 1em;
   }
   .tab {
-    width: 20vw;
+    width: min(20vw, 40vh);
     height: 6vh;
     font-size: 1em;
   }
   .carousel-container {
-    width: 21em;
     height: 20vh;
   }
   .tabs-container {

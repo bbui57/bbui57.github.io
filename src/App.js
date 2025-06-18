@@ -65,7 +65,7 @@ function App() {
               ? "60vw"
               : isMobile
                 ? "80vw"
-                : "35vw"
+                : "55vw"
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
@@ -163,7 +163,7 @@ function App() {
               : isMobile
                 ? "2vh"
                 : isTablet
-                  ? "4vh"
+                  ? "0vh"
                   : "2vh"
           }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
