@@ -112,7 +112,7 @@ function App() {
               ? isMobile
                 ? "-10vh"
                 : isTablet
-                  ? "-8vh"
+                  ? "-12vh"
                   : "-15vh"
               : "0vh",
             scale: activeTab ? 0.8 : 1
@@ -158,7 +158,7 @@ function App() {
               ? isMobile
                 ? "5.5vh"
                 : isTablet
-                  ? "18vh"
+                  ? "8vh"
                   : "6vh"
               : isMobile
                 ? "2vh"
