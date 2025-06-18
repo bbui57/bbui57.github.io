@@ -71,6 +71,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 -->
 
-#Brian Bui, Github Pages Portfolio created using React
+# Brian Bui, Github Pages Portfolio created using React
 --
 View the webpage at https://bbui57.github.io
