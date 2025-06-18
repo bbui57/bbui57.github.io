@@ -43,15 +43,29 @@ function App() {
         className="App-header"
         animate={{
           x: activeTab === "About Me"
-            ? (isMobile ? "0vw" : "35vw")
+            ? isMobile
+              ? "0vw"
+              : isTablet
+                ? "33vw"
+                : "35vw"
             : activeTab
-              ? (isMobile ? "0vw" : "-35vw")
+              ? isMobile
+                ? "0vw"
+                : isTablet
+                  ? "-33vw" 
+                  : "-35vw"
               : "0vw",
-          width: isMobile
-            ? "80vw"
-            : activeTab
-              ? "20vw"
-              : "35vw"
+          width: activeTab
+            ? isTablet
+              ? "30vw"
+              : isMobile
+                ? "80vw"
+                : "20vw"
+            : isTablet
+              ? "60vw"
+              : isMobile
+                ? "80vw"
+                : "35vw"
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
@@ -71,12 +85,12 @@ function App() {
         <motion.div 
           className="title-container"
           animate={{
-            translateY: activeTab
+            y: activeTab
               ? isMobile
                 ? "22vh"
                 : isTablet
                   ? "32vh"
-                  : "30vh"
+                  : "40vh"
               : isMobile
                 ? "1vh"
                 : isTablet
@@ -98,7 +112,7 @@ function App() {
                 ? "-10vh"
                 : isTablet
                   ? "-10vh"
-                  : "-25vh"
+                  : "-15vh"
               : "0vh",
             scale: activeTab ? 0.8 : 1
           }}
@@ -141,10 +155,10 @@ function App() {
             scale: activeTab ? 0.8 : 1,
             y: activeTab
               ? isMobile
-                ? "-2vh"
+                ? "5.5vh"
                 : isTablet
-                  ? "5vh"
-                  : "0"
+                  ? "18vh"
+                  : "6vh"
               : isMobile
                 ? "2vh"
                 : isTablet
@@ -168,7 +182,7 @@ function App() {
           className="socials-container"
           animate={{
             translateY: activeTab ? "0vh" : "2vh",
-            opacity: activeTab ? 0 : 1
+            opacity: activeTab ? isMobile ? 0 : 1 : 1,
           }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
@@ -181,10 +195,23 @@ function App() {
           animate={{
             opacity: activeTab ? 1 : 0,
             x: activeTab === "About Me"
-              ? (isMobile ? "0vw" : "-11vw")
+              ? isMobile
+                ? "0vw"
+                : isTablet
+                  ? "-15vw"
+                  : "-11vw"
               : activeTab
-                ? (isMobile ? "0vw" : "11vw")
-                : "0vw"
+                ? isMobile
+                  ? "0vw"
+                  : isTablet
+                    ? "7vw"
+                    : "11vw"
+                : "0vw",
+            y: isMobile
+              ? "0vh"
+              : isTablet
+                ? "1vh"
+                : "0vh"
           }}
           transition={{ duration: 1 }}
       >

@@ -34,6 +34,7 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 0;
+  position: relative;
 }
 
 .title {
@@ -71,7 +72,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1em;
+  margin-top: 1vh;
   z-index: 10;
 }
 
@@ -92,7 +93,7 @@ body {
   background: rgb(138, 0, 0);
   color: white;
   text-align: center;
-  font-size: 0.8em;
+  font-size: min(1.5vw, 1.5vh);
   border-radius: 2em;
   transition: transform 0.3s ease-in-out;
   display: flex;
@@ -117,7 +118,7 @@ button {
   background: rgb(138, 0, 0);
   color: white;
   text-align: center;
-  font-size: 0.8em;
+  font-size: min(1.5vw, 1.5vh);
   border-radius: 2em;
   border-width: 0;
   transition: transform 0.3s ease-in-out;
@@ -246,20 +247,20 @@ a.resume-link {
   padding-bottom: 0.5em;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) and (max-height: 1000px) {
   .App {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    border: 1px solid red;
     width: 100vw;
     height: 100vh;
   }
   .App-header {
-    min-height: 100vh;
+    height: 100vh;
     box-sizing: border-box;
-    border: 1px solid black;
     position: absolute;
+    align-items: center;
+    justify-content: flex-start;
   }
   .title-container {
     margin-top: 2vh;
@@ -272,22 +273,23 @@ a.resume-link {
     font-size: 3vw;
   }
   .main-circle {
-    width: 50vw;
-    height: 50vw;
-    margin-top: 2vh;
+    width: 40%;
+    aspect-ratio: 1 / 1;
+    position: relative;
   }
   .blurb {
     width: 60%;
     font-size: 1em;
     position: static;
-    margin: 26em auto 1em auto;;
+    margin: 45vh auto 2vh auto;;
     max-height: 80vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
   .resume-container {
     width: 40%;
-    border: 1px solid black;
+    margin: 2vh auto 4vh auto;
+    position: static;
   }
   .tabs-container {
     position: static;
@@ -339,5 +341,17 @@ a.resume-link {
   .carousel-container {
     width: 40vw;
     height: 20vh;
+  }
+  .tabs-container {
+    width: 40vw;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+  }
+  .tab:first-child {
+    margin-left: -9vw;
+  }
+  .tab:last-child {
+    margin-right: -9vw; 
   }
 }
