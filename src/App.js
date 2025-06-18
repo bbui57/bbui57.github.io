@@ -75,7 +75,8 @@ function App() {
             translateX: activeTab === "About Me"
               ? (isMobile ? "-25vw" : "-6vw")
               : (isMobile ? "-25vw" : "6vw"),
-            opacity: activeTab ? 1 : 0
+            opacity: activeTab ? 1 : 0,
+            scale: activeTab ? isMobile ? isTablet ? 0.6 : 0.8 : 1 : 1,
           }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
@@ -89,14 +90,14 @@ function App() {
               ? isMobile
                 ? "22vh"
                 : isTablet
-                  ? "32vh"
+                  ? "38vh"
                   : "40vh"
               : isMobile
                 ? "1vh"
                 : isTablet
                   ? "1vh"
                   : "2vh",
-            scale: activeTab ? 0.8 : 1
+            scale: activeTab ? isMobile ? 1.3 : 0.8 : 1
           }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
@@ -111,7 +112,7 @@ function App() {
               ? isMobile
                 ? "-10vh"
                 : isTablet
-                  ? "-10vh"
+                  ? "-8vh"
                   : "-15vh"
               : "0vh",
             scale: activeTab ? 0.8 : 1
@@ -152,7 +153,7 @@ function App() {
         <motion.div
           className="resume-container"
           animate={{
-            scale: activeTab ? 0.8 : 1,
+            scale: activeTab ? isMobile ? isTablet ? 0.8 : 0.8 : 1 : 1,
             y: activeTab
               ? isMobile
                 ? "5.5vh"
@@ -200,11 +201,11 @@ function App() {
                 : isTablet
                   ? "-15vw"
                   : "-11vw"
-              : activeTab
+              : activeTab //Projects tab
                 ? isMobile
                   ? "0vw"
                   : isTablet
-                    ? "7vw"
+                    ? "15vw"
                     : "11vw"
                 : "0vw",
             y: isMobile
@@ -213,7 +214,7 @@ function App() {
                 ? "1vh"
                 : "0vh"
           }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         {Array.isArray(blurb)
           ? blurb.map((para, idx) => <p key={idx}>{para}</p>)
@@ -268,9 +269,13 @@ function BackButton({ setActiveTab }) {
 
 function SkillCarousel() {
   const skills = [
-    {name: "Java", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"},
-    {name: "Python", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"},
+    {name: "Java", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"},
+    {name: "Python", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"},
     {name: "C", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"},
+    {name: "React", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg"},
+    {name: "HTML", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg"},
+    {name: "CSS", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg"},
+    {name: "Godot", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/godot/godot-original-wordmark.svg"}
   ];
   return (
     <div className="carousel-container">
@@ -333,7 +338,7 @@ function ProjectGrid() {
       desc: "Created using OpenGL and FLTK."
     },
     {
-      title: "This Portfolio!",
+      title: "React Portfolio",
       img: portfolioimg,
       link: "https://bbui57.github.io",
       desc: "Created using React and CSS."

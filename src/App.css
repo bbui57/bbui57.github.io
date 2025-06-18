@@ -141,8 +141,7 @@ button:hover {
 
 .blurb {
   padding: 10px;
-  border-radius: 5px;
-  backdrop-filter: blur(10px);
+  font-size: min(2.5vw, 2.5vh);
   transition: opacity 0.3s;
   width: 50vw;
   text-align: center;
@@ -192,7 +191,7 @@ a.resume-link {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1em;
   margin: 2em auto;
   width: 90%;
@@ -205,7 +204,6 @@ a.resume-link {
   align-items: center;
   text-decoration: none;
   color: white;
-  border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
   background: rgb(138, 0, 0);
@@ -224,7 +222,7 @@ a.resume-link {
 
 .project-title {
   padding: 0.5em;
-  font-size: 1em;
+  font-size: min(1.5vw, 1.5vh);
   text-align: center;
 }
 
@@ -233,9 +231,9 @@ a.resume-link {
   opacity: 0;
   overflow: hidden;
   transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
-  background: #fff;
-  color: #222;
-  font-size: 0.95em;
+  background: #b39879;
+  color: white;
+  font-size: min(1.5vw, 1.5vh);
   padding: 0 0.5em;
   margin: 0;
 }
@@ -254,6 +252,7 @@ a.resume-link {
     justify-content: flex-start;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
   }
   .App-header {
     height: 100vh;
@@ -261,16 +260,17 @@ a.resume-link {
     position: absolute;
     align-items: center;
     justify-content: flex-start;
+    overflow: hidden;
   }
   .title-container {
     margin-top: 2vh;
     width: 100%;
   }
   .title {
-    font-size: 5vw;
+    font-size: min(3vw, 3vh);
   }
   .subtitle {
-    font-size: 3vw;
+    font-size: min(2vw, 2vh);
   }
   .main-circle {
     width: 40%;
@@ -279,10 +279,11 @@ a.resume-link {
   }
   .blurb {
     width: 60%;
+    padding: 1em;
     font-size: 1em;
-    position: static;
+    position: relative;
     margin: 45vh auto 2vh auto;;
-    max-height: 80vh;
+    max-height: 60vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -305,11 +306,11 @@ a.resume-link {
   }
   .tab:first-child {
     margin-left: 0;
-    margin-bottom: 0.7em;
+    margin-bottom: 0.6em;
   }
   .tab:last-child {
     margin-right: 0;
-    margin-top: 0.7em;
+    margin-top: 0.6em;
   }
   button {
     width: 50vw;
@@ -317,29 +318,38 @@ a.resume-link {
     font-size: 1.4em;
   }
   .carousel-container {
-    width: 100vw;
+    width: 100%;
     height: 20vh;
     bottom: 10vh;
   }
   .skill-icon {
-    width: 20vw;
+    width: 10vw;
     height: auto;
+  }
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    max-height: 40vh;
+  }
+  .project-title {
+    padding: 0.5em;
+    font-size: min(2.5vw, 2.5vh);
+    text-align: center;
   }
 }
 
 @media (max-width: 1024px) and (min-width: 601px) {
   button {
     width: 20vw;
-    height: 4vh;
+    height: 6vh;
     font-size: 1em;
   }
   .tab {
     width: 20vw;
-    height: 4vh;
+    height: 6vh;
     font-size: 1em;
   }
   .carousel-container {
-    width: 40vw;
+    width: 21em;
     height: 20vh;
   }
   .tabs-container {
@@ -353,5 +363,16 @@ a.resume-link {
   }
   .tab:last-child {
     margin-right: -9vw; 
+  }
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-height: 60vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .project-title {
+  padding: 0.5em;
+  font-size: min(2vw, 2vh);
+  text-align: center;
   }
 }
